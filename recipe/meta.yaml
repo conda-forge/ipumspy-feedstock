@@ -1,19 +1,19 @@
 {% set name = "ipumspy" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: e64249ba3e22a84a99ded0d630dc5977c7b5d464a4074a8407c39c3f2ccc4011
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: bedc74bfe7efb369b08087f69d63002d7e92f936918d0daca88fd9506625c7aa
 
 build:
   number: 0
   entry_points:
     - ipums = ipumspy.cli:cli
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -40,12 +40,12 @@ test:
 
 about:
   home: The package home page
-  license: "MPL-2.0"
+  license: MPL-2.0
   license_family: MOZILLA
   license_file: LICENSE
-  summary: "A collection of tools for working with IPUMS data"
-  doc_url: "https://ipumspy.readthedocs.io/en/latest/"
-  dev_url: 
+  summary: A collection of tools for working with IPUMS data
+  doc_url: https://ipumspy.readthedocs.io/en/latest/
+  dev_url:
 
 extra:
   recipe-maintainers:
