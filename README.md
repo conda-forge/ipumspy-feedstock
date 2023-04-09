@@ -1,11 +1,11 @@
-About ipumspy
-=============
+About ipumspy-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ipumspy-feedstock/blob/main/LICENSE.txt)
 
 Home: The package home page
 
 Package license: MPL-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ipumspy-feedstock/blob/main/LICENSE.txt)
 
 Summary: A collection of tools for working with IPUMS data
 
@@ -146,4 +146,5 @@ Feedstock Maintainers
 =====================
 
 * [@ipums](https://github.com/ipums/)
+* [@renae-r](https://github.com/renae-r/)
 
