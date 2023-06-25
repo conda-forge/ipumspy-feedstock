@@ -1,5 +1,5 @@
 {% set name = "ipumspy" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ba16acc512a2a29ae211031eea7abd17b817b7cf142335a6e0bd2b6f4e26861b
+  sha256: 2aa7f23fecf08c1b8aa289ee7a0f79afc161a80d4c30d6b8c74cad35ec8396b4
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - ipums = ipumspy.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
