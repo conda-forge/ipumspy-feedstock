@@ -1,5 +1,5 @@
 {% set name = "ipumspy" %}
-{% set version = "0.1.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: e64249ba3e22a84a99ded0d630dc5977c7b5d464a4074a8407c39c3f2ccc4011
+  sha256: dda79587f12d1d904030fb49998ce63cef4a56cad77a38a87108cd01b143456e
 
 build:
   number: 0
@@ -19,17 +19,17 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6.2
-    - poetry >=0.12
+    - python >=3.8.0
+    - poetry >=1.4
 
   run:
-    - click >=7.0.0,<8.0.0
-    - pandas >=1.0.4,<2.0.0
-    - pyarrow >=3.0.0,<4.0.0
-    - python >=3.6.2
-    - pyyaml >=5.4.1,<6.0.0
-    - requests >=2.25.1,<3.0.0
-    - importlib-metadata >=4.0.1
+    - click >=8.0.0,<9.0.0
+    - pandas >=1.5.2,<2.0.0
+    - pyarrow >=14.0.2,<15.0.0
+    - python >=3.8.0
+    - pyyaml >=6.0.1,<7.0.0
+    - requests >=2.26.0,<3.0.0
+    - importlib-metadata >=4.13.0
 
 test:
   imports:
