@@ -2,34 +2,36 @@
 {% set version = "0.5.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: dda79587f12d1d904030fb49998ce63cef4a56cad77a38a87108cd01b143456e
 
 build:
   number: 0
   entry_points:
     - ipums = ipumspy.cli:cli
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.8.0
+    - python >=3.8
     - poetry >=1.4
 
   run:
-    - click >=8.0.0,<9.0.0
+    - click >=8.0.0
     - pandas >=1.5.2,<2.0.0
-    - pyarrow >=14.0.2,<15.0.0
-    - python >=3.8.0
-    - pyyaml >=6.0.1,<7.0.0
+    - pyarrow >=10.0.0
+    - python >=3.8
+    - pyyaml >=6.0.0,<7.0.0
     - requests >=2.26.0,<3.0.0
-    - importlib-metadata >=4.13.0
+    - chardet >=5.1.0
+    - importlib-metadata >=4.13.1
+    - beautifulsoup4 >=4.11.1
 
 test:
   imports:
@@ -40,13 +42,14 @@ test:
 
 about:
   home: The package home page
-  license: "MPL-2.0"
+  license: MPL-2.0
   license_family: MOZILLA
   license_file: LICENSE
-  summary: "A collection of tools for working with IPUMS data"
-  doc_url: "https://ipumspy.readthedocs.io/en/latest/"
-  dev_url: 
+  summary: A collection of tools for working with IPUMS data
+  doc_url: https://ipumspy.readthedocs.io/en/latest/
+  dev_url:
 
 extra:
   recipe-maintainers:
+    - renae-r
     - ipums
