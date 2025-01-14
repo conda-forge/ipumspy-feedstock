@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: dda79587f12d1d904030fb49998ce63cef4a56cad77a38a87108cd01b143456e
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ipums = ipumspy.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - poetry >=1.4
 
   run:
@@ -27,12 +27,14 @@ requirements:
     - pandas >=1.5.2,<2.0.0
     - numpy >1.24.4,<2.0.0
     - pyarrow >=10.0.0
-    - python >=3.8
+    - python >={{ python_min }}
     - pyyaml >=6.0.0,<7.0.0
     - requests >=2.26.0,<3.0.0
     - importlib-metadata >=4.13.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ipumspy
     - ipumspy.api
