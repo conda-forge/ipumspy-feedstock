@@ -1,5 +1,5 @@
 {% set name = "ipumspy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 47451182cf0d140cd5d98ff911aa2691f6ad759cd171e99dbfad5a8a363a621b
+  sha256: dda79587f12d1d904030fb49998ce63cef4a56cad77a38a87108cd01b143456e
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ipums = ipumspy.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,9 +24,9 @@ requirements:
 
   run:
     - click >=8.0.0
-    - pandas >=2.2.3,<3.0.0
-    - numpy >2.0.0,<3.0.0
-    - pyarrow >=18.1.0
+    - pandas >=1.5.2,<2.0.0
+    - numpy >1.24.4,<2.0.0
+    - pyarrow >=10.0.0
     - python >={{ python_min }}
     - pyyaml >=6.0.0,<7.0.0
     - requests >=2.26.0,<3.0.0
