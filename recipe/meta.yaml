@@ -1,5 +1,5 @@
 {% set name = "ipumspy" %}
-{% set version = "0.6.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e767f03d4e408b2d8b2bd11a0448d0d879c74ceabc3a4a778faa3e6ae68f7373
+  sha256: e5155bcbe67c5f976ceb4c9affd5d8c95cf2876e9dd996b4dcce93e3686564f2
 
 build:
   number: 0
